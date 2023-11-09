@@ -34,4 +34,6 @@ public class ArvoreBarbaros {
    public int getSize(){
        return size;
    }
+
+
 }

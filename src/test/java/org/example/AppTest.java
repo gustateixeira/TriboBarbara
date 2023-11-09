@@ -14,5 +14,25 @@ public class AppTest {
         boolean expected = arvore.isEmpty();
         assertEquals(expected, actual);
     }
+    @Test
+    public void addTest() {
+        Nodo n = new Nodo(null, "José", 1000);
+        ArvoreBarbaros arvore = new ArvoreBarbaros(n);
+        arvore.add(n, "Adrielson", 100);
+        String actual = "José";
+        String expected = n.barbaro;
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void addTest2() {
+        Nodo n = new Nodo(null, "José", 1000);
+        ArvoreBarbaros arvore = new ArvoreBarbaros(n);
+        arvore.add(n, "Adrielson", 100);
+        arvore.add(Adrielson, "Carlos", 10);
+        ...
+
+    }
 
 }
