@@ -1,34 +1,33 @@
 package org.example;
 
 public class ArvoreBarbaros {
-   private final Nodo root;
+   private Nodo root;
    private int size;
-   public ArvoreBarbaros(Nodo nodo){
-      this.root = nodo;
-      size = 0;
+   public ArvoreBarbaros(){
+      root = null;
+       size = 0;
    }
 
-   public void add(Nodo pai,String name, int terras){
-       Nodo n = root;
-       if(root == pai) {
-            Nodo nodo = new Nodo(pai, name, terras);
-            root.children.put(name, nodo);
-            size++;
-         }
-       else{
-             while(n != pai){
-                 Nodo child = n.children.get(name);
-                 if(child == null){
-                    child = new Nodo(pai, name, terras);
-                    n.children.put(name,child);
-                    size++;
-                 }
-                 n = child;
-             }
-         }
+   public void add(String pai, String nome, int t){
+       if(this.root == null){
+           this.root = new Nodo(null, nome, t);
+           size++;
+       }
+       else {
+           Nodo n = root;
+           if (n.NOME.equals(pai)) {
+               Nodo filho = new Nodo(root, nome, t);
+               root.children.put(nome, filho);
+               size++;
+           }
+       }
    }
+
    public boolean isEmpty(){
        return size == 0;
+   }
+   public Nodo getRoot(){
+       return root;
    }
 
    public int getSize(){

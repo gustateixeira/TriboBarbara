@@ -7,12 +7,12 @@ public class Nodo
 {
     public int terras;
     public Nodo pai;
-    public String barbaro;
+    public final String NOME;
     Map<String, Nodo> children;
 
-    public Nodo(Nodo pai, String barbaro, int terras)
+    public Nodo(Nodo pai, String nome, int terras)
     {
-        this.barbaro = barbaro;
+        this.NOME = nome;
         this.pai = pai;
         this.terras = terras;
         this.children = new HashMap<>();

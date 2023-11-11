@@ -20,7 +20,7 @@ public class AppTest {
         ArvoreBarbaros arvore = new ArvoreBarbaros(n);
         arvore.add(n, "Adrielson", 100);
         String actual = "José";
-        String expected = n.barbaro;
+        String expected = n.NOME;
         assertEquals(expected, actual);
 
     }
