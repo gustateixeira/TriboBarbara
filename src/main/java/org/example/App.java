@@ -12,9 +12,9 @@ public class App
     public static void main( String[] args )
     {
         Scanner sc = new Scanner(System.in);
-        ArvoreBarbaros a = new ArvoreBarbaros();
         String t = sc.next();
         String pai = sc.next();
+        ArvoreBarbaros a = new ArvoreBarbaros(pai, Integer.parseInt(t));
         a.add(null, pai, Integer.parseInt(t));
         while(sc.hasNext()){
             if(a.getRoot().children.isEmpty()){
@@ -32,6 +32,5 @@ public class App
             }
         }
         System.out.println(a.getRoot().NOME);
-        System.out.println(a.getSize());
     }
 }

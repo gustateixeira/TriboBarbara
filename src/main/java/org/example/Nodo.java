@@ -6,16 +6,19 @@ import java.util.Map;
 public class Nodo
 {
     public int terras;
-    public Nodo pai;
-    public final String NOME;
-    Map<String, Nodo> children;
 
-    public Nodo(Nodo pai, String nome, int terras)
+    public final String NOME;
+    Map<String, Integer> children;
+
+    public Nodo(String nome, int terras)
     {
         this.NOME = nome;
-        this.pai = pai;
         this.terras = terras;
         this.children = new HashMap<>();
     }
+    public void addFilho(String nomeFilho, int terras){
+        children.put(nomeFilho, terras);
+    }
+
 
 }

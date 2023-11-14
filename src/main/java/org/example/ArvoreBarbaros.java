@@ -1,38 +1,35 @@
 package org.example;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ArvoreBarbaros {
-   private Nodo root;
-   private int size;
-   public ArvoreBarbaros(){
-      root = null;
-       size = 0;
-   }
+    Map<String, Nodo> arvore;
+    Nodo root;
 
-   public void add(String pai, String nome, int t){
-       if(this.root == null){
-           this.root = new Nodo(null, nome, t);
-           size++;
-       }
-       else {
-           Nodo n = root;
-           if (n.NOME.equals(pai)) {
-               Nodo filho = new Nodo(root, nome, t);
-               root.children.put(nome, filho);
-               size++;
-           }
-       }
-   }
+    public ArvoreBarbaros(String root, int terras_root) {
+        arvore = new HashMap<>();
+        this.root = new Nodo(root, terras_root);
+        arvore.put(root,this.root);
 
-   public boolean isEmpty(){
-       return size == 0;
-   }
-   public Nodo getRoot(){
-       return root;
-   }
+    }
 
-   public int getSize(){
-       return size;
-   }
+    public void add(String nomePai, String nomeFilho, int terrasConquistadas) {
+        add0(nomePai, nomeFilho, terrasConquistadas);
+    }
 
+    public void add0(String nomePai, String nome, int t) {
+        Nodo pai = arvore.get(nomePai);
+        if (pai != null) {
+            Nodo filho = new Nodo(nome, t);
+            pai.addFilho(nome,t);
+            arvore.put(nome, filho);
+        } else {
+            System.out.println("Erro: Pai não encontrado.");
+        }
+    }
 
+    public Nodo getRoot(){
+        return root;
+    }
 }
