@@ -1,12 +1,6 @@
 package org.example;
-
-
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
 public class App
 {
     public static void main( String[] args )
@@ -27,10 +21,13 @@ public class App
                 String filho = sc.next();
                 int terras = sc.nextInt();
                 a.add(pai, filho, terras);
-
             }
         }
-        a.herancaTerras();
+        for(Nodo n : a.guerreiros){
+            a.repassarTerras(n);
+        }
         System.out.println(a);
+        System.out.println(a.getSize());
+        System.out.println(a.isEmpty());
     }
 }
