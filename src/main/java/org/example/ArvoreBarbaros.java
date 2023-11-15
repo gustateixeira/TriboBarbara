@@ -32,4 +32,34 @@ public class ArvoreBarbaros {
     public Nodo getRoot(){
         return root;
     }
+    public void herancaTerras(){
+            for(Nodo nodos : arvore.values()){
+                herancaTerrasRecursivo(nodos, nodos.terras);
+            }
+
+    }
+
+    private void herancaTerrasRecursivo(Nodo n, int terras){
+        int filhos = n.children.size();
+        if(filhos > 0 ) {
+            int terrasRepassadas = terras / filhos;
+            for (Nodo node : arvore.values()) {
+                node.terras += terrasRepassadas;
+                herancaTerrasRecursivo(node, terrasRepassadas);
+            }
+            n.terras = 0;
+        }
+    }
+
+    public String toString(){
+        String aux = "";
+        for(Nodo node : arvore.values()){
+            aux += "Nome: " + node.NOME + " N de terras: "+ node.terras +  "\n";
+        }
+        return aux;
+
+    }
+
+
+
 }

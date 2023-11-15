@@ -15,7 +15,6 @@ public class App
         String t = sc.next();
         String pai = sc.next();
         ArvoreBarbaros a = new ArvoreBarbaros(pai, Integer.parseInt(t));
-        a.add(null, pai, Integer.parseInt(t));
         while(sc.hasNext()){
             if(a.getRoot().children.isEmpty()){
                 String filho = sc.next();
@@ -31,6 +30,7 @@ public class App
 
             }
         }
-        System.out.println(a.getRoot().NOME);
+        a.herancaTerras();
+        System.out.println(a);
     }
 }
