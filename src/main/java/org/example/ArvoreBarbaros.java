@@ -69,4 +69,16 @@ public class ArvoreBarbaros {
             guerreiro.terras = 0;
         }
     }
+
+    public String getGuerreiroMaisTerras(){
+        String aux = "";
+        int maior = 0;
+        for(Nodo n: guerreiros){
+            if(n.terras > maior){
+                aux = n.NOME;
+                maior = n.terras;
+            }
+        }
+        return "Guerreiro que possui mais terras: " +  aux +  "\n" + "Quantidade de terras: " + maior;
+    }
 }

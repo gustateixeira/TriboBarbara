@@ -27,7 +27,6 @@ public class App
             a.repassarTerras(n);
         }
         System.out.println(a);
-        System.out.println(a.getSize());
-        System.out.println(a.isEmpty());
+        System.out.println(a.getGuerreiroMaisTerras());
     }
 }
