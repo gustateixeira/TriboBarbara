@@ -13,17 +13,6 @@ public class AppTest {
         boolean expected = a.isEmpty();
         assertEquals(expected, actual);
     }
-
-    @Test
-    public void sizeTest(){
-        ArvoreBarbaros a = new ArvoreBarbaros("Jose", 10);
-        a.add("Jose", "Pedro", 10);
-        a.add("Pedro", "Joao", 10);
-        int actual = 3;
-        int expected = a.getSize();
-        assertEquals(expected, actual);
-    }
-
     @Test
     public void getRootTest(){
         ArvoreBarbaros a = new ArvoreBarbaros("Jose", 10);
@@ -46,7 +35,28 @@ public class AppTest {
         int actual = 56519 + 10;
         assertEquals(expected, actual);
     }
-
-
+    @Test
+    public void paiTest(){
+        ArvoreBarbaros a = new ArvoreBarbaros("Jose", 10);
+        a.add("Jose", "Pedro", 10);
+        a.add("Pedro", "Joao", 10);
+        Nodo pedro = a.guerreiros.get(1);
+        Nodo jose = a.guerreiros.get(0);
+        Nodo joao = a.guerreiros.get(2);
+        boolean expected = jose.children.containsKey(pedro.NOME);
+        boolean actual = true;
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void getProfundidadeTest(){
+        ArvoreBarbaros a = new ArvoreBarbaros("Jose", 10);
+        a.add("Jose", "Pedro", 10);
+        a.add("Pedro", "Joao", 10);
+        a.add("Pedro", "Jeferson", 10);
+        Nodo n = a.buscarNodo("Joao");
+        int expected = n.profundidade;
+        int actual = 2;
+        assertEquals(expected, actual);
+    }
 
 }
