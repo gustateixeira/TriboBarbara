@@ -41,7 +41,7 @@ public class ArvoreBarbaros {
         return size == 0;
     }
 
-    private Nodo buscarNodo(String nome){
+    public Nodo buscarNodo(String nome){
         for(Nodo n : guerreiros){
             if(n.NOME.equals(nome))
                 return n;
